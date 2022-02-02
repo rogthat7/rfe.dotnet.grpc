@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "rfe.dotnet.grpc.server";
+
+package auth;
+
+// The weather service definition.
+service Auth {
+  // Sends a greeting
+  rpc GetCurrentWeather (AuthUserRequest) returns (AuthUserResponse);
+}
+
+
+message AuthUserRequest {
+
+	string UserId = 1;
+	string Password = 2 ; 
+}
+
+message AuthUserResponse {
+	string Token = 1;
+}
